@@ -32,7 +32,6 @@ export class ViewPrescriptionComponent implements OnInit {
     );
   }
   deletePrescription(prescription: Prescription){
-
     this.service.removePrescription(prescription.id).subscribe(
       (response: any)=>{
         if(response==true)
@@ -43,7 +42,7 @@ export class ViewPrescriptionComponent implements OnInit {
         else{
           this.snackBar.open("Something Wrong", "",{duration: 2000});
         }
-    }
+      }
     );
   }
 
@@ -52,5 +51,9 @@ export class ViewPrescriptionComponent implements OnInit {
     this.router.navigate(["doctor/prescription/edit-prescription"]) ;
   }
   
+  exportAsPDF(prescription: Prescription){
+    localStorage.setItem("tempPrescription", JSON.stringify(prescription)) ;
+    this.router.navigate(["pdf"]) ;
+  }
 
 }

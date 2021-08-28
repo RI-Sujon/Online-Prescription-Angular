@@ -14,6 +14,7 @@ import { PatientManagementComponent } from './doctor/patient-management/patient-
 import { ViewPatientListComponent } from './doctor/patient-management/view-patient-list/view-patient-list.component';
 import { AddPrescriptionComponent } from './doctor/prescription/add-prescription/add-prescription.component';
 import { EditPrescriptionComponent } from './doctor/prescription/edit-prescription/edit-prescription.component';
+import { PdfViewComponent } from './doctor/prescription/pdf-view/pdf-view.component';
 import { PrescriptionComponent } from './doctor/prescription/prescription.component';
 import { ViewPrescriptionComponent } from './doctor/prescription/view-prescription/view-prescription.component';
 import { EditInfoComponent } from './doctor/profile-management/edit-info/edit-info.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
       { path: 'signup', component: SignupComponent }
     ]
   },
+  { path: "pdf", component: PdfViewComponent, canActivate: [AuthGuardService] },
   { path: 'doctor', component: DoctorComponent, canActivate: [AuthGuardService], 
     children:[
       { path: 'medicine-management', component: MedicineManagementComponent, canActivate: [AuthGuardService],

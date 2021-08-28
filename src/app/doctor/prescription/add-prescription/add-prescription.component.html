@@ -24,17 +24,15 @@
                     <tr>
                         <td style="width: 2%;"></td>
                         <td style="width: 25%;" valign="top">
-                            
-                                <mat-form-field class="example-full-width" appearance="fill">
-                                    <mat-label>Name</mat-label>
-                                    <input type="text" matInput formControlName="medicineName" [matAutocomplete]="auto">
-                                    <mat-autocomplete #auto="matAutocomplete">
-                                      <mat-option *ngFor="let option of filteredOptions[i] | async" [value]="option">
-                                        {{option}}
-                                      </mat-option>
-                                    </mat-autocomplete>
-                                  </mat-form-field>
-                            
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Name</mat-label>
+                                <input type="text" matInput formControlName="medicineName" [matAutocomplete]="auto">
+                                <mat-autocomplete #auto="matAutocomplete">
+                                    <mat-option *ngFor="let option of filteredOptions[i] | async" [value]="option">
+                                    {{option}}
+                                    </mat-option>
+                                </mat-autocomplete>
+                                </mat-form-field>
                         </td>
                         
                         <td style="width: 15%; padding-left: 30px;" valign="top">

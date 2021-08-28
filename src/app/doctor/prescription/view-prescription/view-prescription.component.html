@@ -25,9 +25,9 @@
                     <tr class="text-center">
                         <th>#</th>
                         <th>Medicine Name</th>
-                        <th>When To Take</th>
-                        <th>Before Or After Eating</th>
-                        <th>How Many Days To Take</th>
+                        <th>Medication's Time</th>
+                        <th>Usage</th>
+                        <th>Doses</th>
                         <th>Others Info</th> 
                     </tr>
                     <tr *ngFor="let medicine of prescription.prescribedMedicines; let j=index">
@@ -69,7 +69,7 @@
             </table>
             <br>
             <br>
-            <button class="prescription-button">
+            <button class="prescription-button" (click)="exportAsPDF(prescription)">
                 EXPORT TO PDF
             </button>
         </div>
