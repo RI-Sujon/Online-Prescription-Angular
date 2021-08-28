@@ -1,0 +1,27 @@
+.content-background {
+    background-color: #6baef1;
+    color: black;
+    padding: 15px;
+    margin: 15px 15px 15px 15px;
+}
+
+td, th{
+    border: navy solid 1px;
+}
+
+table{
+    border: 2px;
+}
+
+.editDeleteIconButton{
+    background-color: #0057ad;
+    color: white;
+    border-radius: 2px;
+    border-color: #1976d2;
+    margin: 0px 5px 0px 5px;
+    float: right;
+}
+
+::ng-deep.mat-checkbox-checked.mat-accent.mat-checkbox-disabled .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #1976d2 !important;
+  }

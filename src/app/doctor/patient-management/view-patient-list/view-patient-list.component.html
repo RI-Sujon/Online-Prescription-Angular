@@ -1,0 +1,49 @@
+<div class="row tile-style-headline text-center">
+    <div class="col-sm-8">
+        <b>PATIENT INFO</b>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-3">
+        <b> PRESCRIPTION </b>
+    </div>
+</div>
+<div *ngFor="let patient of patients">
+    <div class="row tile-style">
+        <div class="col-sm-5">  
+            <table>
+                <tr><th>PATIENT ID</th><td>: {{patient.id}}</td></tr>
+                <tr><th>PATIENT NAME</th><td>: {{patient.name}}</td></tr>
+                <tr><th>CONTACT NO</th><td>: {{patient.mobileNumber}}</td></tr>
+                <tr><th>ADDRESS</th><td>: {{patient.address}}</td></tr>
+                <tr><th>DISEASE</th><td>: <span style="color:#0057ad;">{{patient.disease}}</span></td></tr>
+            </table>
+            <br> 
+            <div>
+                <button class="editDeleteIconButton" (click)="editPatientInfo(patient)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button class="editDeleteIconButton" (click)="deletePatient(patient)">
+                    <mat-icon>delete</mat-icon>
+                </button> 
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <br> 
+            <table>
+                <tr><th>PATIENT AGE</th><td>: {{patient.age}}</td></tr>
+                <tr><th>PATIENT WEIGHT</th><td>: {{patient.weight}}</td></tr>
+                <tr><th>BLOOD GROUP</th><td>: {{patient.bloodGroup}}</td></tr>
+            </table>    
+        </div>
+        <div class="col-sm-3 text-center">
+            <br> 
+            <button class="prescription-button" (click)="goToPrescription(patient)">
+                PRESCRIPTION
+            </button>
+            <br>
+            <button class="prescription-button" (click)="deletePatient(patient)">
+                DOWNLOAD PDF
+            </button>    
+        </div>
+    </div>
+</div> 

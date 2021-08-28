@@ -1,0 +1,31 @@
+.tile-style{
+    background-color: #6baef1;
+    padding: 10px 10px 10px 10px;
+    margin-top: 5px;
+    font-family: cursive;
+}
+
+.tile-style-headline{
+    background-color: #1976d2;
+    padding: 10px 10px 10px 10px;
+    font-family: ROBOTO;
+    color: aliceblue;
+}
+
+.editDeleteIconButton{
+    background-color: #0057ad;
+    color: white;
+    border-radius: 2px;
+    border-color: #1976d2;
+    margin: 0px 5px 0px 5px;
+}
+
+.prescription-button{
+    background-color: #0057ad;
+    color: white;
+    border-radius: 2px;
+    border-color: #1976d2;
+    margin: 5px 5px 5px 5px;
+    padding: 5px;
+    width: 100%;
+}

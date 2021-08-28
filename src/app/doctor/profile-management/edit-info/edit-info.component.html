@@ -1,0 +1,37 @@
+<br>
+ 
+<div class="row">
+    <div class="col-md-6 offset-md-3" style="align-items: left;">
+        <h1 class="text-center"><b>EDIT MY PROFILE</b></h1>
+        <form [formGroup]="service.formModel" autocomplete="off" (submit)="editProfileInfo()">
+            <div class="form-group required">
+                <label>Name</label>
+                <input class="form-control" formControlName="doctorName" [ngModel]="doctor.doctorName">
+            </div>
+            <br>
+            <div class="form-group required">
+                <label>Qualification</label>
+                <input class="form-control" formControlName="qualification" [ngModel]="doctor.qualification">
+            </div>
+            <br>
+            <div class="form-group required">
+                <label>MobileNumber</label>
+                <input class="form-control" formControlName="mobileNumber" [ngModel]="doctor.mobileNumber">
+            </div>
+            <br>
+            <div class="form-group required">
+                <label>Email</label>
+                <input class="form-control" style="background-color: #0057ad;" formControlName="email" [ngModel]="doctor.email" [readonly]=true>
+            </div>
+            <br>
+            
+            <div class="form-row">
+                <div class="form-group col-md-6 offset-md-3">
+                    <button type="submit" class="btn btn-lg btn-block" style="background-color: #0057ad;">SUBMIT</button>
+                    <br>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>

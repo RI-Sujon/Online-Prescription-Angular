@@ -1,0 +1,33 @@
+<div class="container">
+    <div id="pdfTable" #pdfTable>
+      <h2>Angular HTML To PDF Generator Example - ItSolutionStuff.com</h2>
+                
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hardik</td>
+            <td>Savani</td>
+            <td>itsolutionstuff.com</td>
+          </tr>
+          <tr>
+            <td>Vimal</td>
+            <td>Kashiyani</td>
+            <td>hdtuto.com</td>
+          </tr>
+          <tr>
+            <td>Harshad</td>
+            <td>Pathak</td>
+            <td>nicesnippets.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="btn btn-primary" (click)="downloadAsPDF()">Export To PDF</button>
+  </div>

@@ -1,0 +1,49 @@
+<div class="row tile-style-headline">
+    <div class="col-sm-1">
+        <div> ID </div>
+    </div>
+    <div class="col-sm-2">
+        <div> MEDICINE NAME </div>
+    </div>
+    <div class="col-sm-2">
+        <div> INDICATION </div>
+    </div>
+    <div class="col-sm-3">
+        <div> USAGE </div>
+    </div>
+    <div class="col-sm-2">
+        <div> INSTRUCTION </div>
+    </div>
+    <div class="col-sm-2 text-center">
+        <div>EDIT / DELETE</div>
+    </div>
+</div>
+<div *ngFor="let medicine of medicines">
+    <div class="row tile-style">
+        <div class="col-sm-1">
+            <p> {{medicine.id}} </p>
+        </div>
+        <div class="col-sm-2">
+            <p> {{medicine.name}}</p>
+        </div>
+        <div class="col-sm-2">
+            <p>{{medicine.indication}}</p>
+        </div>
+        <div class="col-sm-3">
+            <p>{{medicine.usage}}</p>
+        </div>
+        <div class="col-sm-2">
+            <p>{{medicine.instruction}} </p>
+        </div>
+        
+        <div class="col-sm-2 text-center">
+            <button class="editDeleteIconButton" (click)="editMedicineInfo(medicine)">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button class="editDeleteIconButton" (click)="deleteMedicine(medicine)">
+                <mat-icon>delete</mat-icon>
+            </button> 
+            
+        </div>
+    </div>
+</div> 

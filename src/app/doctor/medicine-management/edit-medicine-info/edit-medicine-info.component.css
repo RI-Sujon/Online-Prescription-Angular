@@ -1,0 +1,9 @@
+input.form-control,input.form-control:focus{
+    background-color: #6baef1;
+    color: black;
+    border: 1px solid #636b7b;
+}
+
+.center{
+    text-align: center;
+}

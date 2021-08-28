@@ -1,0 +1,24 @@
+<div class="row content-background"> 
+    <div class="col-md-2" style=" font-size: medium; color: white;">My Profile</div>
+    
+    <div class="col-md-6 offset-md-2">
+        <br>
+        <table style="font-size: medium;" cellpadding="5px">
+            
+            <tr><th>Name</th><td>: {{doctor.doctorName}}</td></tr>
+            <tr><th>Qualification</th><td>: {{doctor.qualification}}</td></tr>
+            <tr><th>Mobile Number</th><td>: {{doctor.mobileNumber}}</td></tr>
+            <tr><th>Email</th><td>: {{doctor.email}}</td></tr>
+        </table>
+        <br>
+        <button class="option-style" routerLink='/doctor/profile-management/edit-profile' routerLinkActive='active'> Edit Profile </button>
+    </div>
+</div>
+
+<div class="content-body">
+    <router-outlet></router-outlet>
+</div>
+
+
+
+  

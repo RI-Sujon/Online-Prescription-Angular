@@ -1,0 +1,40 @@
+<br>
+
+<div class="row mt-1">
+    <div class="col-md-12">
+        <form [formGroup]="service.formModel" (submit)="signUp()" autocomplete="off">
+            <div class="form-group required">
+                <label>Doctor Name</label>
+                <input class="form-control" formControlName="doctorName">
+            </div>
+            <br>
+            <div class="form-group required">
+                <label>Qualification</label>
+                <input class="form-control" formControlName="qualification">
+            </div>
+            <br>
+            <div class="form-group required">
+                <label>Phone Number</label>
+                <input class="form-control" formControlName="mobileNumber">
+            </div>
+            <br>
+            <div class="form-group required">
+                <label>Email</label>
+                <input type="email" class="form-control" formControlName="email">
+            </div>
+            <br>
+            <div class="form-group required">
+                <label>Password</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="form-group col-md-6 offset-md-3">
+                    <button type="submit" class="btn btn-lg btn-block" >Sign Up</button>
+                    <br>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>

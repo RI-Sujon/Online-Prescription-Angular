@@ -1,0 +1,158 @@
+
+<br><br>
+<div class="text-center">
+    <h2><b>Edit Prescription #{{prescription.id}}</b></h2>
+</div>
+
+<div [formGroup]="service.formModel" *ngIf="!isEditMode">
+    <div style="padding: 0px 10px 0px 15px ;"><h3><b>Medicine List</b></h3></div>
+    <ng-container formArrayName="prescribedMedicine">
+        <div *ngFor="let item of prescribedMedicine.controls; let i = index;" style="padding: 0px 10px 0px 10px ; ">
+            <div [formGroupName]="i" style="border: #0057ad solid 2px; background-color: #7ebdfc;">
+                
+                <div *ngIf="isLessThan(i)">
+                    
+                    <table style="width: 100%;" cellpadding="5px"> 
+                        <tr>
+                            <th>#{{i+1}}</th>
+                            <th>Medicine Name</th>
+                            <th style="padding-left: 30px;">When To Take</th>
+                            <th>Before Or After Eating</th>
+                            <th>How Many Days To Take</th>
+                            <th style="padding-left: 30px;">Others Info</th> 
+                            <td>
+                                <button style="background-color: transparent; padding: 0%; border: transparent;"><mat-icon class="delete-btn" (click)="deleteItem(i)">
+                                    delete_forever</mat-icon></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 2%;"></td>
+                            <td style="width: 25%;" valign="top">
+                                
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label>Name</mat-label>
+                                        <input type="text" matInput [ngModel]="prescription.prescribedMedicines[i].medicineName" formControlName="medicineName" [matAutocomplete]="auto">
+                                        <mat-autocomplete #auto="matAutocomplete">
+                                          <mat-option *ngFor="let option of filteredOptions[i] | async" [value]="option">
+                                            {{option}}
+                                          </mat-option>
+                                        </mat-autocomplete>
+                                      </mat-form-field>
+                                
+                            </td>
+                            
+                            <td style="width: 15%; padding-left: 30px;" valign="top">
+                                <section class="example-section">
+                                    <mat-checkbox color="primary" [ngModel]="prescription.prescribedMedicines[i].morning" formControlName="morning" class="example-margin">At Morning</mat-checkbox><br>
+                                    <mat-checkbox color="primary" [ngModel]="prescription.prescribedMedicines[i].noon" formControlName="noon" class="example-margin">At Noon</mat-checkbox><br>
+                                    <mat-checkbox color="primary" [ngModel]="prescription.prescribedMedicines[i].night" formControlName="night" class="example-margin">At Night</mat-checkbox>
+                                </section>
+                            </td>
+                            
+                            <td style="width: 13%;" valign="top">
+                                <section class="example-section">
+                                    <mat-checkbox color="primary" [ngModel]="prescription.prescribedMedicines[i].afterEating" formControlName="afterEating" value="Yes" class="example-margin">After Eating</mat-checkbox><br>
+                                    <mat-checkbox color="primary" [ngModel]="prescription.prescribedMedicines[i].beforeEating" formControlName="beforeEating" value="Yes" class="example-margin">Before Eating</mat-checkbox>
+                                </section>
+                            </td>
+                            <td style="width: 10%;" valign="top">
+                                <mat-form-field style="width: 100px;" appearance="fill">
+                                    <mat-label>Days</mat-label>
+                                    <input [ngModel]="prescription.prescribedMedicines[i].numberOfDaysToTake" formControlName="numberOfDaysToTake" matInput>
+                                </mat-form-field>
+                            </td>
+                            <td style="width: 35%; padding-left: 30px;" valign="top">
+                                <mat-form-field style="width: 100%;" appearance="fill">
+                                    <mat-label>Others Info</mat-label>
+                                    <textarea type="text" [ngModel]="prescription.prescribedMedicines[i].otherInfo" formControlName="otherInfo" matInput> </textarea>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        
+                    </table>
+                    <hr>
+                </div>
+                <div *ngIf="!isLessThan(i)">
+
+                    
+                    <table style="width: 100%;" cellpadding="5px"> 
+                        <tr>
+                            <th>#{{i+1}}</th>
+                            <th>Medicine Name</th>
+                            <th style="padding-left: 30px;">When To Take</th>
+                            <th>Before Or After Eating</th>
+                            <th>How Many Days To Take bla</th>
+                            <th style="padding-left: 30px;">Others Info</th> 
+                            <td>
+                                <button style="background-color: transparent; padding: 0%; border: transparent;"><mat-icon class="delete-btn" (click)="deleteItem(i)">
+                                    delete_forever</mat-icon></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 2%;"></td>
+                            <td style="width: 25%;" valign="top">
+                                
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label>Name</mat-label>
+                                        <input type="text" matInput formControlName="medicineName" [matAutocomplete]="auto">
+                                        <mat-autocomplete #auto="matAutocomplete">
+                                          <mat-option *ngFor="let option of filteredOptions[i] | async" [value]="option">
+                                            {{option}}
+                                          </mat-option>
+                                        </mat-autocomplete>
+                                      </mat-form-field>
+                                
+                            </td>
+                            
+                            <td style="width: 15%; padding-left: 30px;" valign="top">
+                                <section class="example-section">
+                                    <mat-checkbox color="primary" formControlName="morning" class="example-margin">At Morning</mat-checkbox><br>
+                                    <mat-checkbox color="primary" formControlName="noon" class="example-margin">At Noon</mat-checkbox><br>
+                                    <mat-checkbox color="primary" formControlName="night" class="example-margin">At Night</mat-checkbox>
+                                </section>
+                            </td>
+                            
+                            <td style="width: 13%;" valign="top">
+                                <section class="example-section">
+                                    <mat-checkbox color="primary" formControlName="afterEating" value="Yes" class="example-margin">After Eating</mat-checkbox><br>
+                                    <mat-checkbox color="primary" formControlName="beforeEating" value="Yes" class="example-margin">Before Eating</mat-checkbox>
+                                </section>
+                            </td>
+                            <td style="width: 10%;" valign="top">
+                                <mat-form-field style="width: 100px;" appearance="fill">
+                                    <mat-label>Days</mat-label>
+                                    <input formControlName="numberOfDaysToTake" matInput>
+                                </mat-form-field>
+                            </td>
+                            <td style="width: 35%; padding-left: 30px;" valign="top">
+                                <mat-form-field style="width: 100%;" appearance="fill">
+                                    <mat-label>Others Info</mat-label>
+                                    <textarea type="text" formControlName="otherInfo" matInput> </textarea>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        
+                    </table>
+                    <hr>
+                </div>
+            </div>
+            <br>
+        </div>
+    </ng-container>  
+        <button style="margin-left: 15px;" (click)="addItem()" >Add Medicine</button>
+    <br>
+    <br>
+    <div style="padding: 10px 10px 0px 15px ;"><h3><b>Suggestion</b></h3></div>
+    <div style="padding: 0px 10px 10px 10px ; ">
+        <mat-form-field style="width: 100%; " appearance="fill">
+            <mat-label style="color: navy; "><b>Suggestion</b></mat-label>
+            <textarea type="text"  matInput [ngModel]="prescription.suggestion" formControlName="suggestion"> </textarea>
+        </mat-form-field>
+        <br>
+    </div>  
+    <button style="margin-left: 15px;" (click)="updatePrescription()" class="btn btn-success">Update Prescription</button>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>

@@ -1,0 +1,16 @@
+
+<div class="container-fluid heightB">    
+    <div class="row content">
+      <div class="col-sm-2 sidenav text-left">
+        <button mat-raised-button routerLink='/doctor/profile-management' class="option-style"> My Profile </button>
+        <button mat-raised-button routerLink='/doctor/patient-management/view-patient-list' routerLinkActive='active' class="option-style">My Patient</button>
+        <button mat-raised-button routerLink='/doctor/medicine-management/view-medicine-list' routerLinkActive='active' class="option-style">My Medicine</button>
+        <button mat-raised-button (click)="signOut()" class="option-style">Sign Out</button>
+      </div>
+      <div class="col-sm-10"> 
+        <router-outlet></router-outlet>
+      </div>
+      
+    </div>
+  </div>
+  

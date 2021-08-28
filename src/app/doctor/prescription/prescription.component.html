@@ -1,0 +1,42 @@
+<div>
+    <button routerLink="/doctor/prescription/view-prescription" class="btn btn-primary" style="margin: 15px;"> VIEW PRESCRIPTION </button>
+    <button routerLink="/doctor/prescription/add-prescription" class="btn btn-primary" style="margin: 15px;"> CREATE NEW </button>
+</div>
+<div class="page-size-a4" id="content" #content>
+    <div class="row content-background"> 
+        <div class="row">
+            <br>
+            <div class="col-sm-7">  
+                <table cellpadding="10px">
+                    <tr><th>PATIENT ID</th><td>: {{patient.id}}</td></tr>
+                    <tr><th>PATIENT NAME</th><td>: <span style="color: darkblue; font-size: large; font-family: cursive;"><b>{{patient.name}}</b></span></td></tr>
+                    <tr><th>CONTACT NO</th><td>: {{patient.mobileNumber}}</td></tr>
+                    <tr><th>ADDRESS</th><td>: {{patient.address}}</td></tr>
+                    <tr><th>DISEASE</th><td>: <span style="color: darkred; font-family: cursive; font-size: medium;"><b>{{patient.disease}}</b></span></td></tr>
+                </table>
+                
+                <br> 
+            </div>
+            <div class="col-sm-5" >
+                <br> 
+                <table cellpadding="10px">
+                    <tr><th>PATIENT AGE</th><td>: {{patient.age}}</td></tr>
+                    <tr><th>PATIENT WEIGHT</th><td>: {{patient.weight}}</td></tr>
+                    <tr><th>BLOOD GROUP</th><td>: {{patient.bloodGroup}}</td></tr>
+                </table>    
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+  

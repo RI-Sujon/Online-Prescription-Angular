@@ -1,0 +1,79 @@
+<div >
+    <div *ngFor="let prescription of prescriptions; let i=index">
+        <br><br>
+        <div class="content-background">
+            <div style="font-size: small; font-family: cursive;">
+                <b><p>Prescription #{{prescription.id}}</p></b>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <span style="color: rgb(3, 0, 206); font-size: large;"><b>Prescription Date: </b></span> <span style="font-size: large; color: rgb(1, 20, 107); font-family: cursive;">{{prescription.dateAndTime | date: 'medium'}} </span>
+                </div>
+                <div class="col-sm-4">
+                    <button class="editDeleteIconButton" (click)="editPrescriptionInfo(prescription)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button class="editDeleteIconButton" (click)="deletePrescription(prescription)">
+                        <mat-icon>delete</mat-icon>
+                    </button> 
+                </div>
+            </div>
+            <br>
+            <div>
+                <h3><b>Medicine List</b></h3>
+                <table style="width: 100%;" style="font-family: cursive;" cellpadding="5px"> 
+                    <tr class="text-center">
+                        <th>#</th>
+                        <th>Medicine Name</th>
+                        <th>When To Take</th>
+                        <th>Before Or After Eating</th>
+                        <th>How Many Days To Take</th>
+                        <th>Others Info</th> 
+                    </tr>
+                    <tr *ngFor="let medicine of prescription.prescribedMedicines; let j=index">
+                        <td style="width: 2%;" valign="top" class="text-center"><b>{{j+1}}</b></td>
+                        <td style="width: 25%;" valign="top">
+                            {{medicine.medicineName}}
+                        </td>
+                        
+                        <td style="width: 15%;" valign="top">
+                            <section>
+                                <mat-checkbox [disabled]="true" style="color: blue;" [checked]="medicine.morning" ><span style="color: black;">At Morning</span></mat-checkbox><br>
+                                <mat-checkbox [disabled]="true" style="color: blue;" [checked]="medicine.noon" ><span style="color: black;">At Noon</span></mat-checkbox><br>
+                                <mat-checkbox [disabled]="true" style="color: blue;" [checked]="medicine.night" ><span style="color: black;">At Night</span></mat-checkbox>
+                            </section>
+                        </td>
+                        <td style="width: 15%;" valign="top">
+                            <section>
+                                <mat-checkbox [disabled]="true" style="color: blue;" [checked]="medicine.afterEating" ><span style="color: black;">After Eating</span></mat-checkbox><br>
+                                <mat-checkbox [disabled]="true" style="color: blue;" [checked]="medicine.beforeEating" ><span style="color: black;">After Eating</span></mat-checkbox>
+                            </section>
+                        </td>
+                        <td style="width: 10%;" valign="top">
+                            {{medicine.numberOfDaysToTake}}
+                        </td>
+                        <td style="width: 33%;" valign="top">
+                            {{medicine.otherInfo}}
+                        </td>
+                    </tr>
+                    
+                </table>
+            </div>
+            
+            <br>
+            <br>
+            <br>
+            <h3><b>Suggestion</b></h3>
+            <table style="font-family: cursive;" width="100%" height="80px">
+                <tr><td valign="top" style="padding: 10px;"><p>{{prescription.suggestion}}</p></td></tr>
+            </table>
+            <br>
+            <br>
+            <button class="prescription-button">
+                EXPORT TO PDF
+            </button>
+        </div>
+    </div>
+</div>
+<br><br>
+

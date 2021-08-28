@@ -1,0 +1,50 @@
+<br>
+ 
+<div class="row">
+    <div class="col-md-6 offset-md-3" style="align-items: left;">
+        <h1 class="text-center"><b>EDIT PATIENT INFO</b></h1>
+        <form [formGroup]="service.formModel" autocomplete="off" (submit)="editPatientInfo()">
+            <div class="form-group required">
+                <label>Patient Name</label>
+                <input class="form-control" formControlName="Name" [ngModel]="patient.name">
+            </div>
+            <br>
+            <div class="form-group required">
+                <label>Age</label>
+                <input class="form-control" formControlName="Age" [ngModel]="patient.age">
+            </div>
+            <br>
+            <div class="form-group required">
+                <label>Blood Groop</label>
+                <input class="form-control" formControlName="BloodGroup" [ngModel]="patient.bloodGroup">
+            </div>
+            <br>
+            <div class="form-group required">
+                <label>Weight</label>
+                <input class="form-control" formControlName="Weight" [ngModel]="patient.weight">
+            </div>
+            <br>
+            <div class="form-group required">
+                <label>Mobile Number</label>
+                <input class="form-control" formControlName="MobileNumber" [ngModel]="patient.mobileNumber">
+            </div>
+            <br>
+            <div class="form-group required">
+                <label>Address</label>
+                <input class="form-control" formControlName="Address" [ngModel]="patient.address">
+            </div>
+            <br>
+            <div class="form-group required">
+                <label>Disease</label>
+                <input class="form-control" formControlName="Disease" [ngModel]="patient.disease">
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="form-group col-md-6 offset-md-3">
+                    <button type="submit" class="btn btn-lg btn-block" style="background-color: #0057ad;">SUBMIT</button>
+                    <br>
+                </div> 
+            </div>
+        </form>
+    </div>
+</div>
